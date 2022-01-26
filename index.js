@@ -8,6 +8,8 @@ const path = require("path");
 //add routes
 const userRoute = require("./routes/user.routes");
 const travelRoute = require("./routes/travel.routes");
+const loggerRoute = require("./routes/logger.routes");
+const notificationRoute = require("./routes/notification.routes");
 
 //app allow
 dotenv.config();
@@ -25,6 +27,13 @@ mongoose
 //api endpoints
 app.use("/api/user", userRoute);
 app.use("/api/travel", travelRoute);
+app.use("/api/logger", loggerRoute);
+app.use("/api/notification", notificationRoute);
+
+
+
+//get images
+app.use("/images", express.static(path.join(__dirname, "routes/images")));
 
 app.get("/", (req, res) => {
   try {
