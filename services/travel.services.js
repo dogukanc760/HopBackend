@@ -12,7 +12,7 @@ exports.get = async function(query){
 
 exports.getByUserId = async function(userId){
     try {
-        var travels = await Travel.findById(userId);
+        var travels = await Travel.find({userId:{$in:userId}});
         return travels;
     } catch (error) {
         return error;
