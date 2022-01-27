@@ -10,6 +10,7 @@ const userRoute = require("./routes/user.routes");
 const travelRoute = require("./routes/travel.routes");
 const loggerRoute = require("./routes/logger.routes");
 const notificationRoute = require("./routes/notification.routes");
+const settingRoute = require("./routes/main.routes");
 
 //app allow
 dotenv.config();
@@ -29,6 +30,7 @@ app.use("/api/user", userRoute);
 app.use("/api/travel", travelRoute);
 app.use("/api/logger", loggerRoute);
 app.use("/api/notification", notificationRoute);
+app.use("/api/setting", settingRoute);
 
 
 
