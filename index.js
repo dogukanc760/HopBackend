@@ -32,8 +32,6 @@ app.use("/api/logger", loggerRoute);
 app.use("/api/notification", notificationRoute);
 app.use("/api/setting", settingRoute);
 
-
-
 //get images
 app.use("/images", express.static(path.join(__dirname, "routes/images")));
 
