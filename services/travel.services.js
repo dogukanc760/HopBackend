@@ -27,13 +27,14 @@ exports.add = async function(info){
             locationDistinct:{$in:info.startLocation},
             status:{$in:true}
         });
+        console.log(user);
         var newTravel = new Travel({
             userId: info.userId,
             providerId: user._id,
-            isCash: info.isCash,
+            
             expectedTime: info.expectedTime,
-            licencePlate: info.licencePlate,
-            card:info.card,
+            licencePlate: user.myCar[1],
+            card:user.card[0],
             paymentMethod: info.paymentMethod,
             startCity: info.startCity,
             startLocation: info.startLocation,
@@ -42,12 +43,11 @@ exports.add = async function(info){
             calledHour: info.calledHour,
             startHour: info.startHour,
             endHour: info.endHour,
-            whenProvider: info.whenProvider,
-            providerVehicle: info.providerVehicle,
+            whenProviderComed: info.whenProviderComed,
+            providerVehicle: user.myCar[0],
             providerVehicleType: info.providerVehicleType,
             providerRating: info.providerRating,
-            status: info.status,
-            isActive: info.isActive,
+           
         });
         const savedTravel = await newTravel.save();
         console.log(savedTravel);

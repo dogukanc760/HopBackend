@@ -5,7 +5,7 @@ exports.add = async function (req, res, next) {
     var travel = await TravelService.add(req.body);
     return res
       .status(201)
-      .json({ data: travel.data, status: 201, message: "Success" });
+      .json({ data: travel, status: 201, message: "Success" });
   } catch (error) {
     return res.status(404).json({ error: error, status: 400 });
   }

@@ -4,7 +4,7 @@ const TravelSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   providerId: { type: String, default: "" },
   isCash: { type: Boolean, default: true },
-  expectedTime: { type: Number, default: 0 },
+  expectedTime: { type: String, default: 0 },
   licencePlate: { type: String, default: "" },
   card: { type: String, default: "" },
   paymentMethod: { type: String, default: "" },
