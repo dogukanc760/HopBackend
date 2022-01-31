@@ -25,7 +25,7 @@ exports.add = async function(info){
             isProvider:{$in:true},
             locationCity:{$in:info.startCity},
             locationDistinct:{$in:info.startLocation},
-            status:{$in:true}
+            isActive:{$in:true}
         });
         console.log(user);
         var newTravel = new Travel({
@@ -51,7 +51,7 @@ exports.add = async function(info){
         });
         const savedTravel = await newTravel.save();
         console.log(savedTravel);
-        user.status = false;
+        user.isActive = false;
         const updateProvider = await User.findByIdAndUpdate(
             user._id, {$set:user}, {new:true}
         );
