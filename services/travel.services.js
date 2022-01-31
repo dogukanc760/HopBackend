@@ -32,7 +32,7 @@ exports.add = async function(info){
             userId: info.userId,
             providerId: user._id,
             
-            expectedTime: info.expectedTime,
+            expectedTime: info.expectedTime + " Dk",
             licencePlate: user.myCar[1],
             card:user.card[0],
             paymentMethod: info.paymentMethod,
