@@ -8,6 +8,7 @@ const TravelSchema = new mongoose.Schema({
   licencePlate: { type: String, default: "" },
   card: { type: String, default: "" },
   paymentMethod: { type: String, default: "" },
+  startCity:{type: String, default: "" },
   startLocation: { type: String, default: "" },
   endLocation: { type: String, default: "" },
   providerLocation: { type: String, default: "" },
