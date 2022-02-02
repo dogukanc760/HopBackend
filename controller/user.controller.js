@@ -23,7 +23,7 @@ exports.registerBusiness = async function (req, res, next){
 exports.login = async function (req, res, next){
     try {
       var users = await UserService.login(req.body);
-      if(users=='Wrong Pass'){
+      if(users=='Wrong Pass' || users =='wrong mail or gsm'){
           return res.status(404).json({message: 'Wrong Pass', status:404});
       }
       return res.status(200).json({status:200, data:users, message:'Success'});  
