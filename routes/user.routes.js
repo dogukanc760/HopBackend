@@ -11,6 +11,7 @@ router.post('/login', UserController.login);
 router.get('/', UserController.getUsers);
 router.get('/:id', UserController.getById);
 router.get('/get-provider', UserController.getBusiness);
+router.get('/get-by-port/:id', UserController.getByPort);
 
 //http put
 router.put('/:id', UserController.update);

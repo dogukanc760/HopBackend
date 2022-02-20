@@ -51,6 +51,17 @@ exports.getById = async function (req, res, next){
     }
 }
 
+exports.getByPort = async function (req, res, next){
+    try {
+        var users = await UserService.getUser({
+            portId:{$in:req.params.id}
+        });
+        return res.status(200).json({status:200, data:users, message:'Success'});
+    } catch (error) {
+        return res.status(400).json({message: error, status:400});
+    }
+}
+
 exports.getBusiness = async function (req, res, next){
     try {
         var users = await UserService.getUser({isProvider:{$in:true}});
