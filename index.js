@@ -18,6 +18,19 @@ app.use(cors());
 app.use(express.json());
 app.options("*", cors());
 
+
+//logger middleware
+const myLogger = function (req, res, next) {
+  console.log("A request has come request is:");
+  console.log(req.body);
+  next()
+}
+
+
+//Use middleware
+app.use(myLogger);
+
+
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("db connection successfully"))
@@ -34,6 +47,9 @@ app.use("/api/setting", settingRoute);
 
 //get images
 app.use("/images", express.static(path.join(__dirname, "routes/images")));
+
+
+
 
 app.get("/", (req, res) => {
   try {
