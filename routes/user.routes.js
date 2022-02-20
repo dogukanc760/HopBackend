@@ -12,6 +12,7 @@ router.get('/', UserController.getUsers);
 router.get('/:id', UserController.getById);
 router.get('/get-provider', UserController.getBusiness);
 router.get('/get-by-port/:id', UserController.getByPort);
+router.get('/get-ports', UserController.getPorts);
 
 //http put
 router.put('/:id', UserController.update);
