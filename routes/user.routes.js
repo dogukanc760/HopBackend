@@ -19,5 +19,6 @@ router.put('/:id', UserController.update);
 
 
 //http delete
+router.delete('/:id', UserController.delete);
 
 module.exports = router;
