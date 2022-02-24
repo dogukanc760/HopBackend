@@ -6,7 +6,7 @@ exports.add = async function (req, res, next) {
     
     return res
       .status(201)
-      .json({ data: travel, status: 201, message: "Success" });
+      .json({ data: req.body, status: 201, message: "Success" });
   } catch (error) {
     return res.status(404).json({ error: error, status: 400 });
   }
