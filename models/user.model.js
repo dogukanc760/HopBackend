@@ -22,6 +22,7 @@ const UserSchema = new mongoose.Schema({
    wallet:{type:Number, default:0},
    locationCity:{type:String, default:''},
    locationDistinct:{type:String, default:''},
+   taxPlate:{type:String, default:''},
    plate:{type:String, default:''},
 },{timestamps:true});
 
